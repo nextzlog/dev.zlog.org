@@ -1,0 +1,43 @@
+name: 'build'
+on:
+  push:
+    branches:
+    - 'master'
+  schedule:
+  - cron: '0 0 * * *'
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+jobs:
+  Fetch:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+        - repo: repos/jr8ppg/zlog/issues
+          name: zlog
+          file: issues.json
+        - repo: repos/nextzlog/todo/issues
+          name: zylo
+          file: issues.json
+    steps:
+    - run: gh api ${{matrix.repo}} --paginate > ${{matrix.file}}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ${{matrix.name}}
+        path: ${{matrix.file}}
+  Build:
+    needs: Fetch
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
+      with:
+        path: _data
+    - run: jq -s add */issues.json > issues.json
+      working-directory: _data
+    - uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_dir: .
+        enable_jekyll: true
+        cname: dev.zlog.org
+        github_token: ${{secrets.GITHUB_TOKEN}}

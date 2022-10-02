@@ -1,0 +1,20 @@
+remote_theme: nextzlog/pafe
+url: https://dev.zlog.org
+name: zLog開発情報
+icon: /images/zlog.png
+lead: &desc Windowsで動作するコンテスト用ロギングソフトzLog令和版の開発情報を掲載しています。
+desc: *desc
+links:
+- name: GitHub
+  href: https://github.com/jr8ppg/zLog
+  icon: fab fa-github
+- name: zLog.org
+  href: https://zlog.org
+- name: JR8PPG
+  href: http://599010103.blog84.fc2.com
+- name: 無線部開発班
+  href: https://pafelog.net
+jumps:
+- name: プラグイン開発マニュアル
+  href: https://zylo.pafelog.net
+  icon: fas fa-book
