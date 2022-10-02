@@ -5,11 +5,8 @@ icon: /images/zlog.png
 lead: &desc Windowsで動作するコンテスト用ロギングソフトzLog令和版の開発情報を掲載しています。
 desc: *desc
 links:
-- name: zLog
+- name: GitHub
   href: https://github.com/jr8ppg/zLog
-  icon: fab fa-github
-- name: ZyLO
-  href: https://github.com/nextzlog/zylo
   icon: fab fa-github
 - name: zLog.org
   href: https://zlog.org
