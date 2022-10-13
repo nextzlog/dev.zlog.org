@@ -2935,9 +2935,9 @@
       }
     ],
     "milestone": null,
-    "comments": 20,
+    "comments": 23,
     "created_at": "2022-10-10T12:50:11Z",
-    "updated_at": "2022-10-11T18:19:21Z",
+    "updated_at": "2022-10-12T14:38:24Z",
     "closed_at": null,
     "author_association": "MEMBER",
     "active_lock_reason": null,
@@ -5228,9 +5228,9 @@
       }
     ],
     "milestone": null,
-    "comments": 37,
+    "comments": 41,
     "created_at": "2022-07-26T11:21:34Z",
-    "updated_at": "2022-10-05T12:02:38Z",
+    "updated_at": "2022-10-12T14:13:09Z",
     "closed_at": null,
     "author_association": "MEMBER",
     "active_lock_reason": null,
