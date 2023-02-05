@@ -18,3 +18,5 @@ jumps:
 - name: プラグイン開発マニュアル
   href: https://nextzlog.github.io/zylo
   icon: fas fa-book
+plugins:
+- jekyll-sitemap
