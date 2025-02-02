@@ -26,7 +26,7 @@ jobs:
           file: issues.json
     steps:
     - run: gh api ${{matrix.repo}} --paginate > ${{matrix.file}}
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: ${{matrix.name}}
         path: ${{matrix.file}}
@@ -34,15 +34,15 @@ jobs:
     needs: Fetch
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/download-artifact@v3
+    - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
       with:
         path: _data
     - run: jq -s add */issues.json > issues.json
       working-directory: _data
-    - uses: actions/configure-pages@v2
+    - uses: actions/configure-pages@v5
     - uses: actions/jekyll-build-pages@v1
-    - uses: actions/upload-pages-artifact@v1
+    - uses: actions/upload-pages-artifact@v3
   Publish:
     needs: Prepare
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
     steps:
-    - uses: actions/deploy-pages@v1
+    - uses: actions/deploy-pages@v4
   Sustain:
     runs-on: ubuntu-latest
     steps:
